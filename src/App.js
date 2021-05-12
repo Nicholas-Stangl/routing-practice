@@ -1,23 +1,27 @@
+  
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Router, Link } from '@reach/router';
+import Hello from './components/Hello';
+import Word from './components/Word';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <br/>
+      <br/>
+      <br/>
+      <Link to="/home">Get Started!</Link>
+
+      <Router>
+      <Hello path="/home"/>
+      <Word path="/:param" />
+      <Word path="/:param/:textColor"/>
+      <Word path="/:param/:textColor/:bgColor"/>
+      <Word path="/:param/_/:bgColor"/>
+      </Router>
+  
     </div>
   );
 }
